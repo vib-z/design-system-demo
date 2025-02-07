@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ColorPalette from './components/ColorPicker/ColorPalette';
-import { ThemeProvider } from './context/ThemeContext';
 
 const App = () => {
   const [colorSystem, setColorSystem] = useState({
@@ -19,13 +18,7 @@ const App = () => {
           </p>
         </header>
 
-        <ThemeProvider
-          primaryShades={colorSystem.primary}
-          secondaryShades={colorSystem.secondary}
-          tertiaryShades={colorSystem.tertiary}
-        >
-          <ColorPalette onChange={setColorSystem} />
-        </ThemeProvider>
+        <ColorPalette onChange={setColorSystem} />
       </div>
     </div>
   );
